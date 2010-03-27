@@ -1,0 +1,125 @@
+body {
+	margin:20px;
+	font-size:14px;
+	}
+
+ul.menu {
+	list-style:none;
+	margin:0; padding:0;
+	}
+	ul.menu li {
+		float:left;
+		margin:0 10px 0 0;
+		}
+		ul.menu li a {
+			line-height:19px;
+			display:block;
+			padding:5px;
+			background-color:#efefef;
+			text-decoration:none;
+			color:#444;
+			}
+		ul.menu li a:hover {
+			background-color:#fff;
+			color:#ee0077;
+			}
+
+h1 {
+	font-size:24px;
+	color:#ff0099;
+	}
+
+div.hidden {
+	border:1px dashed #aaa;
+	color:#666;
+	}
+div.app {
+	border:1px dashed #aaa;
+	margin:10px 0 20px 0;
+	padding:10px;
+	}
+	a {
+		color:#333;
+		}
+	a: hover {
+		color:#777;
+		text-decoration:none;
+		}
+	a:visited {
+		color:#777;
+		}
+	b {
+		font-size:16px;
+		}
+	ul.ranks {
+		float:left;
+		width:20%;
+		margin:10px 10px 10px 0; padding:0;
+		border-right:3px solid #eeeeee;
+		list-style:none;
+		font-size:12px;
+		}
+		ul.ranks li {
+			margin:3px 0;
+			}
+			ul.ranks li.first {
+				border:1px solid #ff0099;
+				}
+	ul.emptyranks {
+		margin:0; padding:0;
+		list-style:none;
+		}
+		ul.emptyranks li {
+			float:left;
+			margin:0 10px 0 0;
+			}
+			ul.emptyranks li.first {
+				color:red;
+				}
+	ul.questions {
+		float:right;
+		margin:0; padding:0;
+		list-style:none;
+		width:75%;
+		}
+		ul.questions li {
+			margin:10px 0;
+			}
+			ul.questions li b {
+				font-size:12px;
+				}
+	ul.fullquestions {
+		float:none;
+		width:auto;
+		}
+		ul.fullquestions li {
+			margin:0 0 20px 0;
+			}
+div.fullapp {
+	padding:0 20px 20px 20px;
+	}
+	div.fullapp p b {
+		color:#666;
+		}
+	div.fullapp p.name {
+		font-size:18px;
+		}
+	div.fullapp p.name b {
+		color:#111;
+		font-size:20px;
+		}
+
+table.search {
+	width:70%;
+	border:1px solid #ccc;
+	border-collapse:collapse;
+	}
+	table.search tr {
+		line-height:25px;
+		}
+	table.search tr.odd {
+		background-color:#eee;
+		}
+	table.search td {
+		width:25%;
+		}
