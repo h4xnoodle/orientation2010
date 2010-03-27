@@ -17,9 +17,17 @@
 		}
 	div.sidenotes {
 		position:absolute;
-		top:10px; left:10px;
+		top:300px; left:30px;
 		width:200px;
+		font-family:sans-serif;
+		font-size:14px;
+		line-height:22px;
 		}
+		div.sidenotes b {
+			color:#f2448a;
+			font-size:18px;
+			font-family:sans-serif;
+			}
 	div#wrap h1 {
 		background:url(imgs/title.png) 0 0 no-repeat;
 		width:659px; height:158px;
@@ -52,8 +60,8 @@
 </head>
 <body>
 <div class="sidenotes">
-	<p><b>Note!</b></p>
-	<p>Leader apps are still open!</p>
+	<p><b>Sidenotes!</b></p>
+	<p>Leader apps are still open! Click <a href="apply/application2.php">here</a> to apply for Pink Tie and Black Tie positions.</p>
 </div>
 <div id="wrap">
 	<h1 title="UW Orientation 2010 -  Math! I choose you!"></h1>
