@@ -8,7 +8,7 @@
 <meta name="description" content="University of Waterloo, Faculty of Mathematics. Orientation 2010" />
 <meta name="keywords" content="waterloo, orientation, pokemon, math, pikachu, pink tie, pinktie, pink-tie, tie" />
 <script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="splash_style.css" type="text/css" />
 </head>
 <body>
 <div id="splash_wrap">
