@@ -8,62 +8,14 @@
 <meta name="description" content="University of Waterloo, Faculty of Mathematics. Orientation 2010" />
 <meta name="keywords" content="waterloo, orientation, pokemon, math, pikachu, pink tie, pinktie, pink-tie, tie" />
 <script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
-<style type="text/css">
-	img { border:0; }
-	div#wrap {
-		margin:20px auto;
-		width:800px;
-		text-align:center;
-		}
-	div.sidenotes {
-		position:absolute;
-		top:300px; left:30px;
-		width:200px;
-		font-family:sans-serif;
-		font-size:14px;
-		line-height:22px;
-		}
-		div.sidenotes b {
-			color:#f2448a;
-			font-size:18px;
-			font-family:sans-serif;
-			}
-	div#wrap h1 {
-		background:url(imgs/title.png) 0 0 no-repeat;
-		width:659px; height:158px;
-		margin:0 auto;
-		}
-	div#wrap b.count {
-		color:#aaa;
-		font-size:20px;
-		font-family:sans-serif;
-		}
-	div.video {
-		margin:0 auto;
-		border:2px solid #aaa;
-		width:640px; height:480px;
-		}
-		div.video a#player {
-			width:640px; height:480px;
-			display:block;
-			}
-	div.enter a {
-		margin:20px auto;
-		display:block;
-		width:321px; height:138px;
-		background:url(imgs/enter_off.png) 0 0 no-repeat;
-		}
-	div.enter a:hover {
-		background:url(imgs/enter_on.png) 0 0 no-repeat;
-		}
-</style>
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
-<div class="sidenotes">
-	<p><b>Sidenotes!</b></p>
-	<p>Leader apps are still open! Click <a href="apply/application2.php">here</a> to apply for Pink Tie and Black Tie positions.</p>
-</div>
-<div id="wrap">
+<div id="splash_wrap">
+	<div class="sidenotes">
+		<p><b>Sidenotes!</b></p>
+		<p>Leader apps are still open! Click <a href="apply/application2.php">here</a> to apply for Pink Tie and Black Tie positions.</p>
+	</div>
 	<h1 title="UW Orientation 2010 -  Math! I choose you!"></h1>
 
 	<div class="video"><a href="imgs/themeRelease.flv" id="player"></a></div>
