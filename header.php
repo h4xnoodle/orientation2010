@@ -30,15 +30,18 @@
 			<li><a href="#">teamsters</a></li>
 		</ul>
 	</div>
-	<ul class="menu">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Events</a></li>
-		<li><a href="#">Cheers</a></li>
-		<li><a href="#">Pictures</a></li>
-		<li><a href="#">FAQ</a><li>
-		<li><a href="#">The Pink Tie</a></li>
-		<li><a href="#">Sponsors</a></li>
-		<li><a href="#">Contact Us</a><li>
-	</ul>
+
+	<div id="menu">
+		<ul>
+		<li><a href="main.php">Home</a></li>
+		<li><a href="main.php?events">Events</a></li>
+		<li><a href="cheers.php">Cheers</a></li>
+		<li><a href="main.php?pictures">Pictures</a></li>
+		<li><a href="faq.php">FAQ</a><li>
+		<li><a href="pinktie.php">The Pink Tie</a></li>
+		<li><a href="main.php?sponsors">Sponsors</a></li>
+		<li><a href="main.php?contact">Contact Us</a></li>
+		</ul>
+	</div>
 	
 	<div id="content"> <!-- It won't end up being all nicely tabbed :( -->

@@ -1,8 +1,11 @@
 /* -- Global things -- */
 img { border:0; }
-* { margin:0; padding:0; font-family:sans-serif; }
+* { margin:0; padding:0; font-family:Verdana, Arial, sans-serif; }
 
-html { background:url(imgs/ties_bg.png) #ffe9e9; }
+body { 
+	background:url(imgs/ties_bg.png) #ffe9e9;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	}
 
 /* -- Main -- */
 div#wrap {
@@ -26,14 +29,18 @@ div#wrap div#header {
 		max-height:95px;
 		list-style:none;
 		}
+	div#wrap div#header ul.teams li {
+		font-size:18px;
+		}
 	div#wrap div#header ul.teams li a {
+			font-family:Verdana, sans-serif;
 			float:left;
 			display:block;
+			position:relative;
 			padding:0 2px;
 			margin:0 5px 5px 5px;
-			font-size:22px;
+			line-height:28px;
 			font-weight:bold;
-			font-family:sans-serif;
 			text-decoration:none;
 			color:#666;
 			text-shadow:#ffe9e9 1px 1px 0px;
@@ -43,65 +50,112 @@ div#wrap div#header {
 			}
 
 /* -- Menu -- */
-div#wrap ul.menu {
-	list-style:none;
-	width:875px;
+div#wrap div#menu {
+	text-align:center;
 	height:40px;
-	margin:10px 0;
-	}
-	div#wrap ul.menu li:first-child {
-		margin:0 0 0 10px;
+	margin:5px auto 20px auto;
+	display:table;
+	height:40px;
+ 	}
+	div#wrap div#menu ul {
+		display:table-row;
+		list-style:none;
+		white-space:nowrap;
+		padding:0; margin:0;
 		}
-	div#wrap ul.menu li a {
-		float:left;
-		line-height:40px;
-		display:block;
-		padding:0 15px;
-		margin:0 5px;
-		text-shadow:#bbb 1px 1px 0px;
-		background-color:#ffe9e9;
-		-webkit-border-radius:5px;
-		-moz-border-radius:5px;
-		color:#f2448a;
-		font-size:18px;
-		text-decoration:none;
-		}
-	div#wrap ul.menu li a:hover {
-		background-color:#efefef;
-		-webkit-border-radius:5px;
-		-moz-border-radius:5px;
-		}
+		div#wrap div#menu ul li {
+			display:inline;
+			}
+		div#wrap div#menu ul li a {
+			display:block;
+			padding:0 10px;
+			margin:0 5px;
+			float:left;
+			line-height:40px;
+			background-color:#ffe9e9;
+			text-shadow:#bbb 1px 1px 0px; /* oh man CSS3 */
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			color:#f2448a;
+			font-size:18px;
+			text-decoration:none;
+			}
+		div#wrap div#menu ul li a:hover {
+			background-color:#eee;
+			color:#777;
+			}
 
 /* -- Content -- */
 div#wrap div#content {
 	float:left;
-	width:580px;
+	width:590px;
 	}
 	div#wrap div#content h1 {
 		text-transform:uppercase;
-		font-size:32px;
+		font-size:28px;
 		font-weight:normal;
 		color:#555;
-		padding:10px 20px;
+		margin:0 0 20px 30px;
+		padding:0 0 5px 0;
+		border-bottom:1px dashed #777;
+		text-shadow:#bbb 2px 1px 0px;
 		}
 	div#wrap div#content h1:first-letter {
-		font-size:46px;
-		font-weight:bold;
+		font-size:42px;
 		}
-
+	div#wrap div#content h2 {
+		font-size:20px;
+		color:#d23872;
+		margin:15px 0 10px 30px;
+		padding:0;
+		font-weight:normal;
+		}
+	div#wrap div#content p {
+		font-size:14px;
+		line-height:20px;
+		color:#444;
+		margin:0 10px 15px 30px;
+		}
+		div#wrap div#content p a {
+			text-decoration:none;
+			color:#d23872;
+			border-bottom:1px dashed #d23872;
+			}
+		div#wrap div#content p img {
+			padding:2px;
+			border:1px solid #ccc;
+			}
 
 /* -- Sidebar -- */
 div#wrap div#sidebar {
 	float:right;
-	width:250px;
+	width:240px;
+	margin:0 30px 0 0;
 	}
+	div#wrap div#sidebar p {
+		margin:10px 0;
+		font-size:12px;
+		color:#999;
+		}
 
 /* -- Footer -- */
 div#wrap div#footer {
-	height:50px;
+	border-top:1px dashed #ddd;
 	padding:30px;
+	margin:30px 0 0 0;
 	background-color:#fff;
 	clear:both;
-	-webkit-border-radius:15px;
-	-moz-border-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	-moz-border-radius-bottomleft:15px;
 	}
+	div#wrap div#footer p {
+		font-size:14px;
+		color:#bbb;
+		text-transform:uppercase;
+		text-align:center;
+		}
+	div#wrap div#footer:hover p {
+		color:#777;
+		}

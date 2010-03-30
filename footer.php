@@ -3,7 +3,7 @@
 	<? include("sidebar.php"); ?>
 	
 	<div id="footer">
-		<p>FOOTER STUFF</p>
+		<p>&copy; University of Waterloo Mathematics Orientation Committee 2010</p>
 	</div>
 	
 </div> <!-- wrap -->
