@@ -1,4 +1,7 @@
 <div id="sidebar">
-	<p>Suggestion box will go here, if that's okay</p>
-	<p>I'm going to put the twitter feed for the orientation twitter account here :)</p>
+	<h2>What should the aerial photo be?</h2>
+	<p>Suggestion box coming soon!</p>
+
+	<h2>@mathorientation</h2>
+	<p>Twitter feed going to be here.</p>
 </div>

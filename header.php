@@ -15,19 +15,9 @@
 <div id="wrap">
 	<div id="header">
 		<ul class="teams">
-			<li><a href="#">Pi-kachu</a></li>
-			<li><a href="#">Vaporeon</a></li>
-			<li><a href="#">Magicarp</a></li>
-			<li><a href="#">Goldeen</a></li>
-			<li><a href="#">yourmom</a></li>
-			<li><a href="#">raichu</a></li>
-			<li><a href="#">jolteon</a></li>
-			<li><a href="#">ho-oh</a></li>
-			<li><a href="#">co-ordinators</a></li>
-			<li><a href="#">foc</a></li>
-			<li><a href="#">black ties</a></li>
-			<li><a href="#">tie-guard</a></li>
-			<li><a href="#">teamsters</a></li>
+			<?php foreach($teams as $team)
+				echo "<li><a href='#'>".$team."</a></li>";
+			?>
 		</ul>
 	</div>
 
