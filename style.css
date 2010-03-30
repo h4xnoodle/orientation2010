@@ -137,6 +137,11 @@ div#wrap div#sidebar {
 		font-size:12px;
 		color:#999;
 		}
+	div#wrap div#sidebar h2 {
+		color:#444;
+		font-size:18px;
+		font-weight:normal;
+		}
 
 /* -- Footer -- */
 div#wrap div#footer {
