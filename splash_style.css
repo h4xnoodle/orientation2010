@@ -4,28 +4,26 @@ div#splash_wrap {
 	width:800px;
 	text-align:center;
 	}
-	div#splash_wrap div.sidenotes {
-		position:absolute;
-		top:300px; left:30px;
-		width:200px;
+	div#splash_wrap p {
 		font-family:sans-serif;
-		font-size:14px;
-		line-height:22px;
-		text-align:left;
 		}
-		div#splash_wrap div.sidenotes b {
-			color:#f2448a;
-			font-size:18px;
-			font-family:sans-serif;
-			}
-		div#splash_wrap div.sidenotes a {
-			color:#f2448a;
-			font-weight:bold;
-			}
-		div#splash_wrap div.sidenotes a:hover {
-			color:#3e49b6;
-			font-weight:bold;
-			}
+	div#splash_wrap p.copy {
+		font-size:12px;
+		color:#666;
+		}
+	div#splash_wrap p.note b {
+		color:#f2448a;
+		font-size:18px;
+		font-family:sans-serif;
+		}
+	div#splash_wrap p.note a {
+		color:#f2448a;
+		font-weight:bold;
+		}
+	div#splash_wrap p.note a:hover {
+		color:#3e49b6;
+		font-weight:bold;
+		}
 	div#splash_wrap h1 {
 		background:url(imgs/title.png) 0 0 no-repeat;
 		width:659px; height:158px;
