@@ -72,7 +72,7 @@ div#wrap div#menu {
 			margin:0 5px;
 			float:left;
 			line-height:40px;
-			background-color:#ffe9e9;
+			background-color:#ffd1d1;
 			text-shadow:#bbb 1px 1px 0px; /* oh man CSS3 */
 			-webkit-border-radius:5px;
 			-moz-border-radius:5px;
@@ -81,8 +81,7 @@ div#wrap div#menu {
 			text-decoration:none;
 			}
 		div#wrap div#menu ul li a:hover {
-			background-color:#eee;
-			color:#777;
+			background-color:#ffe2e2;
 			}
 
 /* -- Content -- */
