@@ -22,6 +22,13 @@ div#wrap div#header {
 	position:relative;
 	background:url(imgs/header.png) 0 0 no-repeat;	
 	}
+	div#wrap div#header a.home {
+		position:absolute;
+		top:10px; left:160px;
+		display:block;
+		width:690px;
+		height:100px;
+		}
 	div#wrap div#header ul.teams { 
 		position:absolute;
 		top:125px; left:235px;
@@ -53,7 +60,7 @@ div#wrap div#header {
 div#wrap div#menu {
 	text-align:center;
 	height:40px;
-	margin:5px auto 20px auto;
+	margin:5px auto 10px auto;
 	display:table;
 	height:40px;
  	}
@@ -72,7 +79,7 @@ div#wrap div#menu {
 			margin:0 5px;
 			float:left;
 			line-height:40px;
-			background-color:#ffd1d1;
+			background-color:#ffd6d6;
 			text-shadow:#bbb 1px 1px 0px; /* oh man CSS3 */
 			-webkit-border-radius:5px;
 			-moz-border-radius:5px;
@@ -129,18 +136,23 @@ div#wrap div#content {
 div#wrap div#sidebar {
 	float:right;
 	width:240px;
-	margin:0 30px 0 0;
+	margin:0 25px 0 0;
 	}
 	div#wrap div#sidebar p {
-		margin:10px 0;
+		margin:10px 0 5px 0;
 		font-size:12px;
+		line-height:18px;
 		color:#999;
 		}
 	div#wrap div#sidebar h2 {
 		color:#444;
+		margin:20px 0 0 0;
 		font-size:16px;
 		font-weight:normal;
 		}
+		div#wrap div#sidebar h2.twitter {
+			color:#34b2db;
+			}
 
 /* -- Footer -- */
 div#wrap div#footer {

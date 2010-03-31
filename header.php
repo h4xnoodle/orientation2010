@@ -8,12 +8,14 @@
 	<meta name="description" content="University of Waterloo, Faculty of Mathematics. Orientation 2010" />
 	<meta name="keywords" content="waterloo, orientation, pokemon, math, pikachu, pink tie, pinktie, pink-tie, tie" />
 	<script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
 
 <div id="wrap">
 	<div id="header">
+		<a class="home" href="main.php"> </a>
 		<ul class="teams">
 			<?php foreach($teams as $team)
 				echo "<li><a href='#'>".$team."</a></li>";
