@@ -48,7 +48,7 @@ if($_GET['app']) {
 		echo "</div>";
 	}
 	else {
-		echo "Error! Contact bex";
+		echo "There is no application attached to that entry in the contact information table. Sorry!";
 	}
 }
 
