@@ -1,6 +1,6 @@
 	</div> <!-- content -->
 
-	<? include("sidebar.php"); ?>
+	<?php include("sidebar.php"); ?>
 	
 	<div id="footer">
 		<p>&copy; University of Waterloo Mathematics Orientation Committee 2010</p>
