@@ -14,8 +14,6 @@
 
 	<div class="video"><a href="imgs/themeRelease.flv" id="player"></a></div>
 	<p class="copy">&copy; Math Federation Orientation Committee 2010. No copyright infringement intended.</p>
-	<p class="note"><b>Important Note!</b></p>
-	<p class="note">Leader apps are open until <b>APRIL 23, 2010</b>! Click <a href="apply/application2.php">here</a> to apply for Pink Tie and Black Tie positions.</p>
 	<div class="enter"><a href="main.php"></a></div>
 	<?php 
 		$oweek = '1283608800'; // Date of O-week in seconds
