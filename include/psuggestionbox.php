@@ -6,15 +6,18 @@
 //	- Cookie to time submissions (no repeated entries in a short time)
 //	- Math captcha - ensure a submission is by a human or a smart script
 //	- Read/Write from XML file
+
 session_start();
 setcookie('o_suggestionbox',true,time()+60*60);
 $xmlfile = "suggestions.xml";
 
 // Check that file exists and is writable
 if(!file_exists($xmlfile) || !is_writable($xmlfile)) {
-	$fp = fopen($xmlfile,'a');
-	if(!$fp)
+	$fp = fopen($xmlfile,'a') or die("Cannot create ".$xmlfile." in ". $_SERVER['DOCUMENT_ROOT']);
+	if(!$fp) {
+		mail('h4xnoodle@gmail.com', 'Oweek site fail', 'Couldnt create XML file on server');
 		exit("Cannot create ".$xmlfile);
+	}
 	fwrite($fp,"<?xml version=\"1.0\"?>\n<ideas>\n</ideas>");
 }
 			
@@ -46,6 +49,7 @@ if($_POST['submit']) {
 		if($xml->save($xmlfile)) {
 			$_SESSION['o_sug'] = "Suggestion added!";	
 		} else {
+			mail('h4xnoodle@gmail.com','Suggestion box','Suggestion-adding horrible failed!');
 			errReset("Suggestion failed to add :(");
 		}
 	}
