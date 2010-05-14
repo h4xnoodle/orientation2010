@@ -1,8 +1,6 @@
 <div id="sidebar">
 <?php if(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING'])) { ?>
-	<h2>Suggestion Box</h2>
-	<p>What should the aerial photo be this year?</p>
-	<p>Suggestion box coming soon!</p>
+	<?php include "suggestionbox.php"; ?>
 <?php } ?>
 
 <?php 
@@ -43,7 +41,5 @@ if(basename($_SERVER['PHP_SELF'],'.php') == "faq") { ?>
 	</script>
 <?php } ?>
 <?php if(!(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING']))) { ?>
-	<h2>Suggestion Box</h2>
-	<p>What should the aerial photo be this year? Suggestion box coming soon!</p>
 <?php } ?>
 </div>

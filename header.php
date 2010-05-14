@@ -1,4 +1,7 @@
-<?php require("include/config.php"); ?>
+<?php
+require("include/config.php");
+session_start();
+ ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -10,6 +13,17 @@
 	<script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
 	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- lol -->
+	<?php if(!(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING']))) { ?>
+	<style type='text/css'>
+		div#wrap div#sidebar {
+			display:none;
+		}
+		div#wrap div#content {
+			width: 840px;
+		}
+	</style>
+	<?php } ?>
 </head>
 <body>
 
