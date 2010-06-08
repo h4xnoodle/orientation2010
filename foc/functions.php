@@ -118,4 +118,17 @@ function getEmptyApps() {
 		return false;
 	}
 }
+
+// Get suggestions from suggestions.xml and return an array
+// []=>{time,idea}
+function getSuggestions() {
+	$xmlfile = "../include/suggestions.xml";
+	if(file_exists($xmlfile))
+		$sxe = simplexml_load_file($xmlfile);
+	else
+		exit('Cannot load xml file. Make sure the file exists and is readable!');
+	foreach($sxe->children() as $idea)
+		$ideas[] = array('time'=>$idea['time'],'fave'=>$idea['fave'],'idea'=>$idea);
+	return $ideas;
+}
 ?>

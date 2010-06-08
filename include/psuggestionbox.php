@@ -44,6 +44,7 @@ if($_POST['submit']) {
 		$root = $xml->documentElement;
 		$new = $xml->createElement('idea', $_POST['idea']);
 		$new->setAttribute('time',date('Y-m-d H:i:s'));
+		$new->setAttribute('fave',false);
 		$root->appendChild($new);
 		unset($_POST);
 		if($xml->save($xmlfile)) {
@@ -54,14 +55,5 @@ if($_POST['submit']) {
 		}
 	}
 	header("Location: ../main.php");
-} else {
-	// Using SimpleXML for quick reading -- put this in FOC section later
-	if(file_exists($xmlfile))
-		$sxe = simplexml_load_file($xmlfile);
-	else
-		exit('Cannot load xml file. Make sure the file exists!');
-	echo "Ideas so far:<br /><br />";
-	foreach($sxe->children() as $idea)
-		echo $idea."<br/ >";
 }
 ?>

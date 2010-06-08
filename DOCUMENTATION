@@ -1,0 +1,43 @@
+DOCUMENTATION
+========================================
+Orientation Week System (2010 hacked-together edition...)
+
+NON-SCRIPT MODS
+========================================
+Jun 7: Created/modded leaders and leader_profiles tables. Turn those into scripts later. Have one DB install script.
+
+CURRENT DB SCHEMA
+========================================
+- One db
+	- appinfo : holds the questions/application data for the applicant
+	- constantinfo : holds the leader's unique information (phone,email, etc)
+	- leaders : the final leaders (had to use FOC's spreadsheet to get student numbers to get from appinfo)
+	- leader_profiles : To be used for profile information for website.
+	- coordpositions : mapping of co-ordinator positions
+	- leaderpositions : mapping of leader positions
+	- teams : mapping of teams
+	
+
+CURRENT FEATURES [FRONT]
+========================================
+- Application form
+- Base Website with static pages
+- Suggestion box (XML-based)
+- 
+
+CURRENT FEATURES [BACK]
+========================================
+- Application management: hide, review apps. 'Secret' constantinfo until viewed.
+
+TODO
+========================================
+- Suggestion box XML -> DB. [BACK] management
+- 
+
+FUTURE IDEAS/CONSIDERATIONS
+========================================
+- AUTH! Use the new shiz
+- Modules: Suggestion box. Able to have multiple ones. DB..
+- Able to export to CSV/Excel.
+- Fancy-pants viewing of stuff. 
+- CMS system instead of static pages
