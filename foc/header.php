@@ -7,9 +7,10 @@
 <?php if($_SESSION['foc'] == "true") { ?>
 <h1>Hello FOC! :)</h1>
 <ul class="menu">
-<li><a href="info.php?apps">View Applications</a></li>
-<li><a href="info.php?incomplete">View Incomplete (no personality questions) apps</a></li>
+<li><a href="info.php?apps">View Apps</a></li>
+<li><a href="info.php?incomplete">View Incomplete apps</a></li>
 <li><a href="boxadmin.php">Suggestion Box Admin</a></li>
+<li><a href="retreatview.php">View Retreat Confirmations</a></li>
 </ul>
 <br style="clear:both;" / >
 

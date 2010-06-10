@@ -2,9 +2,16 @@ DOCUMENTATION
 ========================================
 Orientation Week System (2010 hacked-together edition...)
 
+AUTHOR
+========================================
+Rebecca Putinski (rjputins) h4xnoodle@gmail.com
+
+
 NON-SCRIPT MODS
 ========================================
 Jun 7: Created/modded leaders and leader_profiles tables. Turn those into scripts later. Have one DB install script.
+	   Wrote a script to transfer leaders from constantinfo table to leaders table with set of IDs from excel sheet they had.
+
 
 CURRENT DB SCHEMA
 ========================================
@@ -25,14 +32,18 @@ CURRENT FEATURES [FRONT]
 - Suggestion box (XML-based)
 - 
 
+
 CURRENT FEATURES [BACK]
 ========================================
 - Application management: hide, review apps. 'Secret' constantinfo until viewed.
 
+
 TODO
 ========================================
 - Suggestion box XML -> DB. [BACK] management
-- 
+- Generic form style
+- Make DB class do more... ie put shit into array
+
 
 FUTURE IDEAS/CONSIDERATIONS
 ========================================
@@ -41,3 +52,4 @@ FUTURE IDEAS/CONSIDERATIONS
 - Able to export to CSV/Excel.
 - Fancy-pants viewing of stuff. 
 - CMS system instead of static pages
+- Event schedule maker

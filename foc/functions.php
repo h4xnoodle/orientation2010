@@ -131,4 +131,21 @@ function getSuggestions() {
 		$ideas[] = array('time'=>$idea['time'],'fave'=>$idea['fave'],'idea'=>$idea);
 	return $ideas;
 }
+
+// Get leader count
+function getNumLeaders() {
+	$obligatoryIntermediateValue = mysql_fetch_row(mysql_fetchmysql_query("SELECT COUNT(*) FROM leaders"))
+	return $obligatoryIntermediateValue[0];
+}
+
+// Get the confirmations (yes or no) of the retreat
+
+function getRetreatConfs($poke) {
+	$query = "SELECT lid,fname,lname,email,diet FROM leaders WHERE rconfirm='".$poke."'";
+	$result = mysql_query($query);
+	while($l = mysql_fetch_assoc($result))
+		$confirmed[] = $l;
+	}
+	return $confirmed;
+}
 ?>

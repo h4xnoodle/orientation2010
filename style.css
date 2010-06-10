@@ -131,6 +131,11 @@ div#wrap div#content {
 			padding:2px;
 			border:1px solid #ccc;
 			}
+	div#wrap hr {
+		border:0;
+		border-bottom:1px dashed #777;
+		margin:10px 0px 10px 30px;
+		}
 
 /* -- Sidebar -- */
 div#wrap div#sidebar {
@@ -175,3 +180,11 @@ div#wrap div#footer {
 	div#wrap div#footer:hover p {
 		color:#777;
 		}
+
+/* -- Generic Form -- */
+div#wrap form input,
+div#wrap form textarea {
+	padding:2px;
+	font-family:inherit;
+	font-size:inherit;
+	}
