@@ -31,8 +31,8 @@ div#wrap div#header {
 		}
 	div#wrap div#header ul.teams { 
 		position:absolute;
-		top:125px; left:235px;
-		width:580px;
+		top:125px; left:230px;
+		width:620px;
 		max-height:95px;
 		list-style:none;
 		}
@@ -46,7 +46,7 @@ div#wrap div#header {
 			position:relative;
 			padding:0 2px;
 			margin:0 5px 5px 5px;
-			line-height:28px;
+			line-height:20px;
 			font-weight:bold;
 			text-decoration:none;
 			color:#666;
@@ -131,10 +131,20 @@ div#wrap div#content {
 			padding:2px;
 			border:1px solid #ccc;
 			}
-	div#wrap hr {
+	div#wrap div#content hr {
 		border:0;
 		border-bottom:1px dashed #777;
 		margin:10px 0px 10px 30px;
+		}
+	div#wrap div#content p.notice {
+		padding:10px;
+		text-align:center;
+		margin:10px 0 10px 30px;
+		background-color:#ffe9e9;
+		display:block;
+		color:#e96699;
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;
 		}
 
 /* -- Sidebar -- */

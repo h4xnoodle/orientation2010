@@ -122,29 +122,29 @@ function getEmptyApps() {
 // Get suggestions from suggestions.xml and return an array
 // []=>{time,idea}
 function getSuggestions() {
-	$xmlfile = "../include/suggestions.xml";
-	if(file_exists($xmlfile))
-		$sxe = simplexml_load_file($xmlfile);
-	else
-		exit('Cannot load xml file. Make sure the file exists and is readable!');
-	foreach($sxe->children() as $idea)
-		$ideas[] = array('time'=>$idea['time'],'fave'=>$idea['fave'],'idea'=>$idea);
+	$query = "SELECT * FROM sbox ORDER BY fave DESC,time DESC";
+	$ideas = array();
+	$result = mysql_query($query);
+	if($result) {
+		while($s = mysql_fetch_assoc($result))
+			$ideas[] = $s;
+	}
 	return $ideas;
 }
 
 // Get leader count
 function getNumLeaders() {
-	$obligatoryIntermediateValue = mysql_fetch_row(mysql_fetchmysql_query("SELECT COUNT(*) FROM leaders"))
+	$obligatoryIntermediateValue = mysql_fetch_row(mysql_query("SELECT COUNT(*) FROM leaders"));
 	return $obligatoryIntermediateValue[0];
 }
 
 // Get the confirmations (yes or no) of the retreat
-
 function getRetreatConfs($poke) {
-	$query = "SELECT lid,fname,lname,email,diet FROM leaders WHERE rconfirm='".$poke."'";
+	$query = "SELECT id,fname,lname,email,diet FROM leaders WHERE rconfirm='".$poke."'";
 	$result = mysql_query($query);
-	while($l = mysql_fetch_assoc($result))
-		$confirmed[] = $l;
+	while($l = mysql_fetch_assoc($result)) {
+		if($poke || (!$poke && $l['diet']))
+			$confirmed[] = $l;
 	}
 	return $confirmed;
 }

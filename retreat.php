@@ -14,7 +14,7 @@ Location: MC 3rd floor (outside the Comfy)<br />
 <form method="post" action="include/retreat_process.php">
 	<p>UW Student Number (ex. 202XXXXX): <input type="text" name="uwid" maxlength="8" /></p>
 	<p>Please provide your <em>last name</em> (as entered on your application): <input type="text" name="lname" /></p>
-	<p>Are you coming to the retreat?: <input type="radio" name="confirm" value="yes" checked="true" /> YES! <input type="radio" name="confirm" value="no" /> NO :(</p>
+	<p>Are you coming to the retreat?: <input type="radio" name="confirm" value=1 checked="true" /> YES! <input type="radio" name="confirm" value=0 /> NO :(</p>
 	<p>If you are attending, please list any dietary restrictions, as there will be food. If you are not attending, please give a reason why. This cannot be left blank if you are <em>not</em> attending.</p>
 	<p><textarea name="reason" style="width:60%;height:120px;"></textarea></p>
 	<p><input type="submit" name="submit" value="Confirm Attendance" /></p>
