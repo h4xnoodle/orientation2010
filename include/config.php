@@ -1,6 +1,7 @@
 <?php 
 global $names;
-include "../foc/functions.php";
+mysql_connect('localhost','orient2010','V1ct0ri@.CB');
+mysql_select_db('orientation2010');
 
 function getTeams($types=array('leader','other')) {
 	$query = "SELECT * FROM teams type WHERE";

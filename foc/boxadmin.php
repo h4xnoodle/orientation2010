@@ -3,6 +3,7 @@ session_start();
 include "functions.php";
 include "header.php";
 
+if($_SESSION['foc'] == true) {
 echo "<h1>Suggestion Box Admin</h1>";
 echo "<p>Here you can 'fave', and delete entries from the suggestion box. Newest and bolded at the top.</p><hr />";
 
@@ -47,6 +48,10 @@ if($suggestions) {
 	echo "</form>\n";
 } else {
 	echo "No suggestions entered!";
+}
+} //session
+else {
+	echo "Please <a href='index.php'>login</a>";
 }
 include "footer.php";
 ?>

@@ -13,7 +13,7 @@
 
 	case 'sponsors':
 		echo "<h1>".$names['sponsors']."</h1>";
-		echo "<p>Coming soon!</p>";
+		echo "<p>We would like to thank:</p><p><a href=\"http://mathsoc.uwaterloo.ca\">MathSOC</a></p>";
 		break;
 
 	case 'contact':

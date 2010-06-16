@@ -9,7 +9,7 @@ Date: Saturday, July 10th<br />
 Time: 8:15 am sign in<br />
 Location: MC 3rd floor (outside the Comfy)<br />
 </p>
-<p>Please provide the following information to confirm your attendance.</p>
+<p>Please provide the following information to confirm your attendance. <b>Note:</b> If you are a SE leader, please enter 0 for your student number.</p>
 <hr />
 <form method="post" action="include/retreat_process.php">
 	<p>UW Student Number (ex. 202XXXXX): <input type="text" name="uwid" maxlength="8" /></p>

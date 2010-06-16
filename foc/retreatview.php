@@ -3,6 +3,9 @@
 session_start();
 include "functions.php";
 include "header.php";
+
+if($_SESSION['foc'] == true) {
+
 echo "<h1>Retreat Confirmation Viewer</h1>";
 echo "<p>View leaders who have said yes and no (with reasons!)</p>";
 
@@ -34,5 +37,9 @@ if(count($denied)) {
 ?>
 </div></div>
 <?php
+} //session
+else {
+	echo "Please <a href='index.php'>login</a>";
+}
 include "footer.php";
 ?>

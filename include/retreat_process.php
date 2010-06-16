@@ -55,13 +55,24 @@ if($_POST['submit']) {
 		check("You must enter a reason for not attending. Please go back and try again.");
 		return;
 	}
+	// For softies..... because the FOC don't have the numbers >_<
+	if($_POST['uwid'] == 0) {
+		$check = "SELECT * FROM leaders WHERE lname LIKE \"".$_POST['lname']."\" AND program=\"Software\"";
+		$result = mysql_query($check);
+		if($result && mysql_num_rows($result))
+			$isSoftie = true;
+	}
+	
 	// Check lastname and student number are not blank
 	if($_POST['lname'] == "" || $_POST['uwid'] == "") {
-		check("Please enter your UW Student number and your lastname.");
+		check("Please enter your UW Student number and your lastname. Enter 0 if you're a software engineer.");
 		return;
 	}
 	// Check lastname and UWID together to verify leader
-	$query = "SELECT * FROM leaders WHERE uwid='".$_POST['uwid']."' AND lname LIKE '".$_POST['lname']."'";
+	if($isSoftie)
+		$query = "SELECT * FROM leaders WHERE uwid=0 AND lname LIKE '".$_POST['lname']."'";
+	else
+		$query = "SELECT * FROM leaders WHERE uwid='".$_POST['uwid']."' AND lname LIKE '".$_POST['lname']."'";
 	$result = mysql_query($query);
 	// There is a match
 	if(mysql_num_rows($result)){ 
@@ -83,7 +94,7 @@ if($_POST['submit']) {
 			}
 		}
 	} else {
-		check("There was no match for your UWID and lastname. Please go back and make sure you've entered them correctly. If you believe this is in error, please contact the web admin: <a href='mailto:h4xnoodle@gmail.com'>Rebecca</a>");
+		check("There was no match for your UWID and lastname. Please go back and make sure you've entered them correctly. <br /><br />Note: SE leaders please enter 0 for your UWID. <br /><br />If you believe this is in error, please contact the web admin: <a href='mailto:h4xnoodle@gmail.com'>Rebecca</a>");
 	}
 }
 ?>
