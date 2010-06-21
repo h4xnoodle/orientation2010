@@ -140,7 +140,7 @@ function getNumLeaders() {
 
 // Get the confirmations (yes or no) of the retreat
 function getRetreatConfs($poke) {
-	$query = "SELECT id,fname,lname,email,diet FROM leaders WHERE rconfirm='".$poke."'";
+	$query = "SELECT id,fname,lname,email,diet FROM leaders WHERE rconfirm='".$poke."' ORDER BY diet DESC";
 	$result = mysql_query($query);
 	while($l = mysql_fetch_assoc($result)) {
 		if($poke || (!$poke && $l['diet']))

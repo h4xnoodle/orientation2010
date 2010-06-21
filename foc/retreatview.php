@@ -22,7 +22,10 @@ echo "<p>Out of <b>".$total."</b> leaders, <b>".count($confirmations)."</b> said
 <?php
 if(count($confirmations)) {
 	foreach($confirmations as $c) {
-		echo "<p style='line-height:20px;background-color:#eee;padding:3px;'><a href='mailto:".$c['email']."'><b style='color:green;'>".$c['fname']." ".$c['lname']."</b></a> confirmed.<br />Diet Specs: ".$c['diet']."</p>";
+		echo "<p style='line-height:20px;background-color:#eee;padding:3px;";
+		echo ($c['diet'] != "") ? "background-color:#ddd;" : "";
+		echo "'><a href='mailto:".$c['email']."'><b style='color:green;'>".$c['fname']." ".$c['lname']."</b></a> confirmed.";
+		echo ($c['diet'] != "") ? "<br />Diet Specs: ".$c['diet']."</p>" : "</p>";
 	}
 }
 ?>
