@@ -51,14 +51,16 @@ Math faculty<br /><br />
 My school is sweet<br />
 SWEET LIKE A FOX!<br />
 Because I know<br />
-UW Math Rocks<br /><br />
-Row Row Row Reduce<br /><br />
-Row, row, row reduce<br />
+UW Math Rocks</p>
+
+<h2>Row Row Row Reduce</h2>
+<p>Row, row, row reduce<br />
 Madly down the page.<br />
 One mistake and you'll be baked<br />
-So check at every stage.<br /><br />
-Sine Sine Cosine Sine<br /><br />
-Sine Sine Cosine Sine<br />
+So check at every stage.</p>
+
+<h2>Sine Sine Cosine Sine</h2>
+<p>Sine Sine Cosine Sine<br />
 Three point one four one five nine</p>
 
 <h2>Hip Hip</h2>

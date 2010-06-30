@@ -1,41 +1,168 @@
+/******************************************
+* FOC dashboard stuff
+* Rebecca Putinski rjputins@uwaterloo.ca
+* Orientation 2010
+******************************************/
+
+/* GLOBAL */
 body {
-	margin:20px;
+	margin:30px 20px;
 	font-size:14px;
+	background:#eee;
 	}
-p {
+
+/* LOGIN FORM */
+div#loginform {
+	padding:30px 60px;
+	background-color:#fff;
+	border:1px solid #bbb;
+	text-align:center;
+	width:300px;
+	margin:100px auto;
+	}
+	div#loginform h1 {
+		font-size:30px;
+		font-family:sans-serif;
+		font-weight:normal;
+		margin:0 0 10px 0;
+		color:#444;
+		}
+	div#loginform p {
+		font-family:sans-serif;
+		font-size:18px;
+		color:#777;
+		}
+	div#loginform form input {
+		padding:6px;
+		}
+
+/* GIANT CONTAINER */
+div#wrap {
+	min-width:960px;
+	background:#fff;
+	padding:10px 20px;
 	font-family:sans-serif;
 	font-size:14px;
+	color:#111;
+	position:relative;
 	}
-p.fave {
-	font-weight:bold;
-	}
-
-ul.menu {
-	list-style:none;
-	margin:0; padding:0;
-	}
-	ul.menu li {
-		float:left;
-		margin:0 10px 0 0;
+	div#wrap div.logout {
+		position:absolute;
+		top:5px; right:5px;
 		}
-		ul.menu li a {
-			line-height:19px;
-			display:block;
-			padding:5px;
-			background-color:#efefef;
+		div#wrap div.logout a {
 			text-decoration:none;
-			color:#444;
+			text-transform:uppercase;
+			display:block;
+			padding:4px;
 			}
-		ul.menu li a:hover {
-			background-color:#fff;
-			color:#ee0077;
-			}
+			div#wrap div.logout a:hover {
+				background-color:#eee;
+				}
+	div#wrap h1 {
+		font-size:28px;
+		color:#ff0099;
+		font-family:sans-serif;
+		font-weight:normal;
+		}
+	div#wrap p {
+		}
+	div#wrap hr {
+		width:100%;
+		border:0;
+		border-top:2px solid #ddd;
+		}
 
-h1 {
-	font-size:24px;
-	color:#ff0099;
+/* CONTENT */
+div#wrap div#content {
+	padding:5px 0 0 250px;
+	}
+	div#wrap div#content p {
+		color:inherit;
+		font-family:inherit;
+		}
+	div#wrap div#content p.fave {
+		font-weight:bold;
+		}
+	div#wrap div#content h1 {
+		font-size:22px;
+		color:#555;
+		font-weight:normal;
+		}
+	div#wrap div#content h2 {
+		font-size:18px;
+		color:#555;
+		font-weight:normal;
+		text-transform:uppercase;
+		}
+	div#wrap div#content hr {
+		border:0;
+		border-top:1px dashed #888;
+		}
+	div#wrap div#content ul {
+		margin:5px 0;
+		}
+		div#wrap div#content ul li {
+			margin:6px 0;
+			}
+	div#wrap div#content pre.changelog {
+		white-space:pre-wrap;
+		color:#666;
+		font-size:12px;
+		}
+
+/* SIDEBAR */
+div#wrap div#sidebar {
+	width:230px;
+	float:left;
+	}
+	div#wrap div#sidebar h3 {
+		color:#555;
+		margin:20px 0 5px 0;
+		}
+	div#wrap div#sidebar p {
+		font-size:12px;
+		color:#888;
+		}
+	div#wrap div#sidebar ul.menu,
+	div#wrap div#sidebar ul.menu li ul {
+		list-style:none;
+		margin:10px 0 0 0; padding:0;
+		}
+		div#wrap div#sidebar ul.menu li,
+		div#wrap div#sidebar ul.menu li ul li {
+			margin:5px 0;
+			}
+			div#wrap div#sidebar ul.menu li ul {
+				margin:5px 0 5px 20px;
+				}
+			div#wrap div#sidebar ul.menu li a,
+			div#wrap div#sidebar ul.menu li ul li a {
+				line-height:19px;
+				display:block;
+				padding:5px;
+				background-color:#f5f5f5;
+				text-decoration:none;
+				color:#444;
+				}
+			div#wrap div#sidebar ul.menu li ul li a {
+				background-color:#f8f8f8;
+				color:#666;
+				}
+			div#wrap div#sidebar ul.menu li a:hover {
+				background-color:#fff;
+				color:#ee0077;
+				}
+		
+/* FOOTER */
+div#wrap div#footer {
+	clear:both;
+	height:40px;
+	text-align:center;
+	line-height:40px;
 	}
 
+/* OTHER SHIT I NEED TO SORT LATER */
 div.hidden {
 	border:1px dashed #aaa;
 	color:#666;
@@ -75,10 +202,11 @@ div.app {
 	ul.emptyranks {
 		margin:0; padding:0;
 		list-style:none;
+		display:table;
 		}
 		ul.emptyranks li {
-			float:left;
 			margin:0 10px 0 0;
+			display:table;
 			}
 			ul.emptyranks li.first {
 				color:red;
@@ -115,9 +243,8 @@ div.fullapp {
 		color:#111;
 		font-size:20px;
 		}
-
 table.search {
-	width:70%;
+	width:100%;
 	border:1px solid #ccc;
 	border-collapse:collapse;
 	}

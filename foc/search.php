@@ -6,7 +6,7 @@ include_once "header.php";
 
 if($_SESSION['foc'] == "true") {
 
-if($_POST['searchthings']) { // problem here for maria at work
+if($_POST['searchthings']) {
 	$results = searchNames($_POST['search']);
 
 	if(!$results)

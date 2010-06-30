@@ -146,6 +146,20 @@ div#wrap div#content {
 		-webkit-border-radius:5px;
 		-moz-border-radius:5px;
 		}
+	div#wrap div#content ul.allteams {
+		list-style:none;
+		margin:10px 0 20px 50px;
+		}
+		div#wrap div#content ul.allteams li {
+			margin:3px 0;
+			}
+		div#wrap div#content ul.allteams li a {
+			text-decoration:none;
+			color:#d23872;
+			}
+		div#wrap div#content ul.allteams li a:hover {
+			color:#444;
+			}
 
 /* -- Sidebar -- */
 div#wrap div#sidebar {

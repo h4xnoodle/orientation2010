@@ -5,8 +5,9 @@
 
 <?php 
 if(basename($_SERVER['PHP_SELF'],'.php') == "faq") { ?>
-	<h2>FAQ</h2>
-	<p>List of questions here</p>
+
+
+
 <?php } else if(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING'])) { ?>
 	<h2 class="twitter">Twitter</h2>
 	<script type="text/javascript">

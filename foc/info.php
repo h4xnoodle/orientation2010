@@ -118,16 +118,13 @@ switch($_SERVER['QUERY_STRING']) {
 				$lp = getLPositions();
 				echo "<ul class=\"emptyranks\">";
 				outputRankPref($l,$lp);
-				echo "</ul>";
-				echo "<br style=\"clear:both;\" /><br />";
+				echo "</ul><br /><br />";
 
 				$c = parseRankings($app[corankings]);
 				$cp = getCPositions();
 				echo "<ul class=\"emptyranks\">";
 				outputRankPref($c,$cp);
-				echo "</ul>";
-				echo "<br style=\"clear:both;\" />";
-
+				echo "</ul><br />";
 				echo "</div>";
 			}
 		} else {

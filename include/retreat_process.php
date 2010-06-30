@@ -45,7 +45,6 @@ $botMsg = "<p><a href='http://orientation.math.uwaterloo.ca/2010/main.php'>Retur
 
 function check($msg) {
 	echo "<p style='color:red;font-weight:bold;'>".$msg."</p>";
-	echo $botMsg;
 	return;
 }
 
@@ -55,7 +54,8 @@ if($_POST['submit']) {
 		check("You must enter a reason for not attending. Please go back and try again.");
 		return;
 	}
-	// For softies..... because the FOC don't have the numbers >_<
+
+	// For softies, since we dont have their UWIDs.
 	if($_POST['uwid'] == 0) {
 		$check = "SELECT * FROM leaders WHERE lname LIKE \"".$_POST['lname']."\" AND program=\"Software\"";
 		$result = mysql_query($check);

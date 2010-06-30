@@ -11,25 +11,27 @@ function parseRankings($rankings) {
 function getLPositions() {
 	$query = "SELECT * FROM leaderpositions";
 	$result = mysql_query($query);
-	$positions[] = "";
 	while($position = mysql_fetch_assoc($result))
-		$positions[] = $position['position_name'];
+		$positions[] = array('id'=>$position['pid'],'position_name'=>$position['position_name']);
 	return $positions;
 }
 
 function getCPositions() {
 	$result = mysql_query("SELECT * FROM coordpositions");
-	$positions[] = "";
 	while($position = mysql_fetch_assoc($result)) 
-		$positions[] = $position['position_name'];
+		$positions[] = array('id'=>$position['cid'],'position_name'=>$position['position_name']);
 	return $positions;
 }
 
+// Fix this
 function outputRankPref($prefs, $possible) {
 	foreach($prefs as $num=>$pref) {
 		echo ($num == 0) ? "<li class=\"first\">" : "<li>";
 		echo $num+1;
-		echo ". ".$possible[$pref]." </li>";
+		foreach($possible as $pos){
+			if($pos['id'] == $num+1)
+				echo ". ".$pos['position_name']." </li>";
+		}
 	}
 }
 

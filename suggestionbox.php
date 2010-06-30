@@ -11,8 +11,8 @@ if($_SESSION['o_sug'] != "") {
 ?>
 <p>Q: What should the aerial photo be this year?</p>
 <form action="include/psuggestionbox.php" method="post">
-	<input type="hidden" name="ans" value="<?php echo $s_one+$s_two; ?>" />
-	<p><textarea name="idea"></textarea></p>
+	<p><input type="hidden" name="ans" value="<?php echo $s_one+$s_two; ?>" /></p>
+	<p><textarea name="idea" cols="22" rows="4"></textarea></p>
 	<p><?php echo $s_one . " + ". $s_two; ?> is? <input type="text" style="width:40px;" name="anschk" /></p>
 	<p><input type="submit" name="submit" value="Enter!" /></p>
 </form>

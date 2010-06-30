@@ -15,7 +15,7 @@ function getTeams($types=array('leader','other')) {
 		while($t = mysql_fetch_assoc($result))
 			$teams[] = $t;
 	} else {
-		exit("No teams?");
+		exit("No teams.");
 	}
 	return $teams;
 }
@@ -23,13 +23,14 @@ function getTeams($types=array('leader','other')) {
 $names = array(
 	'main'=>"Welcome!", 
 	'faq'=>"Frequently Asked Questions",
-	'events'=>"Events",
+	'events'=>"Event Schedule for the Week",
 	'cheers'=>"Cheers",
 	'pictures'=>"Pictures",
 	'pinktie'=>"The Pink Tie Story",
 	'sponsors'=>"Sponsors",
 	'contact'=>"Contact Us"
 	);
+
 $showteams = false;
 if(!$showteams) {
 	$teams = array(
@@ -55,10 +56,6 @@ if(!$showteams) {
 	"Gym Leaders"
 	);
 } else {
-	$moo = getTeams();
-	foreach($moo as $team)
-		$teams[] = $team['displayname'];
+	$teams = getTeams();
 }
-
-// Init db connection
- ?>
+?>

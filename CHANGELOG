@@ -1,0 +1,12 @@
+CHANGELOG
+##########################################
+
+2010-06-27 - 1.1.0
+------------------------------------------
+- Lots of FOC front-end work (design was improved to accommodate for more menu options)
+
+- View sizing information from form that leaders fill out
+
+- Known issues: I broke the rankings display on the left-side of application-viewing. But I figured you guys were using that way less now. I will fix it later.
+
+- Started this changelog :)

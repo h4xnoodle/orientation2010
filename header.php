@@ -2,16 +2,15 @@
 require("include/config.php");
 session_start();
  ?>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>UW Math Orientation 2010 - <?php echo $names[basename($_SERVER[PHP_SELF],'.php')]; ?></title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 	<meta name="description" content="University of Waterloo, Faculty of Mathematics. Orientation 2010" />
 	<meta name="keywords" content="waterloo, orientation, pokemon, math, pikachu, pink tie, pinktie, pink-tie, tie" />
 	<script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
-	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<!-- lol -->
 	<?php if(!(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING']))) { ?>
@@ -31,8 +30,14 @@ session_start();
 	<div id="header">
 		<a class="home" href="main.php"> </a>
 		<ul class="teams">
-			<?php foreach($teams as $team)
-				echo "<li><a href='#'>".$team."</a></li>";
+			<?php 
+			if($showteams) {
+			foreach($teams as $team)
+				echo "<li><a href='teams.php?".$team['refname']."'>".$team['displayname']."</a></li>";
+			} else {
+				foreach($teams as $team)
+					echo "<li><a href='#' title='".$team."'>".$team."</a></li>";
+			}
 			?>
 		</ul>
 	</div>
@@ -43,7 +48,7 @@ session_start();
 		<li><a href="main.php?events">Events</a></li>
 		<li><a href="cheers.php">Cheers</a></li>
 		<li><a href="main.php?pictures">Pictures</a></li>
-		<li><a href="faq.php">FAQ</a><li>
+		<li><a href="faq.php">FAQ</a></li>
 		<li><a href="pinktie.php">The Pink Tie</a></li>
 		<li><a href="main.php?sponsors">Sponsors</a></li>
 		<li><a href="main.php?contact">Contact Us</a></li>
