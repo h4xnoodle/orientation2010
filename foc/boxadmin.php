@@ -39,7 +39,7 @@ if($_POST['delete']) {
 }
 $suggestions = getSuggestions();
 if($suggestions) {
-	echo "<form action='".$_SERVER['PHP_SELF']."' method='post' onsubmit='return confirm(\"Are you sure??\")' />\n";
+	echo "<form action='".$_SERVER['PHP_SELF']."' method='post' onsubmit='return confirm(\"Are you sure??\")'>\n";
 	foreach($suggestions as $s) {
 		echo $s['fave'] ? "<p class='fave'>" : "<p>";
 		echo "<input type='checkbox' name='del[".$s['id']."]' value='".$s['suggestion']."' /> ".$s['suggestion']." <em style='font-size:80%;color:#999;'>at ".$s['time']."</em></p>\n";

@@ -1,5 +1,7 @@
 release :
 	cp DOCUMENTATION ../ 
+	cp CHANGELOG ../
+	cp VERSION ../
 	cp apply/* ../apply/ 
 	cp cheers.php ../ 
 	cp faq.php ../ 
@@ -17,4 +19,7 @@ release :
 	cp sidebar.php ../
 	cp splash_style.css ../
 	cp style.css ../
+	cp teams.php ../
 	cp suggestionbox.php ../
+	cp leader_sizes.php ../
+	cp update_profile.php ../

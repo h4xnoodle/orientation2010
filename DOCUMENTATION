@@ -47,9 +47,10 @@ TODO
 
 FUTURE IDEAS/CONSIDERATIONS
 ========================================
-- AUTH! Use the new shiz
+- AUTH! Use the new shiz or independent auth?
 - Modules: Suggestion box. Able to have multiple ones. DB..
 - Able to export to CSV/Excel.
 - Fancy-pants viewing of stuff. 
 - CMS system instead of static pages
 - Event schedule maker
+- ability to turn off forms (retreat, apply, etc)
