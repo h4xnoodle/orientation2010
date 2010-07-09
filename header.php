@@ -56,4 +56,4 @@ session_start();
 	</div>
 	
 	<div id="content"> <!-- It won't end up being all nicely tabbed :( -->
-	<!--	<p class="notice">LEADERS: Confirm your attendance to the retreat <a href="retreat.php">here!</a>.</p>-->
+		<p class="notice">LEADERS: Update your profiles <a href="update_profile.php">here!</a>.</p>
