@@ -22,7 +22,7 @@ function insert($uwid) {
 		$result = mysql_query($query);
 		if($result && mysql_num_rows($result)) {
 			$stuff = mysql_fetch_assoc($result);
-			$query = "INSERT INTO leaders (appid,uwid,uwname,fname,lname,pname,email,faculty,program,phone,addressw,addressp,faid) VALUES (".$stuff['lid'].",".$stuff['uwid'].",\"".$stuff['uwname']."\",\"".$stuff['fname']."\",\"".$stuff['lname']."\",\"".$stuff['pname']."\",\"".$stuff['email']."\",\"".$stuff['faculty']."\",\"".$stuff['program']."\",\"".$stuff['phone']."\",\"".$stuff['addressw']."\",\"".$stuff['addressp']."\",".$stuff['faid'].")";
+			$query = "INSERT INTO leaders (appid,uwid,uwname,fname,lname,pname,email,faculty,program,phone,addressw,addressp,faid) VALUES (".$stuff['lid'].",".$stuff['uwid'].",\"".$stuff['uwname']."\",\"".$stuff['fname']."\",\"".$stuff['lname']."\",\"".$stuff['pname']."\",\"".$stuff['email']."\",\"".$stuff['faculty']."\",\"".$stuff['program']."\",\"".$stuff['phone']."\",\"".$stuff['addressw']."\",\"".$stuff['addressp']."\",".$stuff['faid']."); INSERT INTO leader_profiles (lid) SELECT id FROM leaders WHERE uwid='".$uwid."'";
 			$result = mysql_query($query);
 			if($result)
 				echo "Added<br />";

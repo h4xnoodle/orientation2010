@@ -31,7 +31,7 @@ $names = array(
 	'contact'=>"Contact Us"
 	);
 
-$showteams = false;
+$showteams = true;
 if(!$showteams) {
 	$teams = array(
 		"???????",
