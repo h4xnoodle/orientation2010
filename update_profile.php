@@ -71,7 +71,7 @@ if($_SESSION['leader_lname'] && $_SESSION['leader_uwid'])
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <p>Last name: <input type="text" name="lname" /></p>
-<p>UW ID: <input type="text" name="uwid" /></p>
+<p>UW ID (ie 202XXXXX): <input type="text" name="uwid" maxlength="8" /></p>
 <p><input type="submit" name="update_profile" value="Continue" /></p>
 </form>
 

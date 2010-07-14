@@ -22,20 +22,34 @@ function insert($uwid) {
 		$result = mysql_query($query);
 		if($result && mysql_num_rows($result)) {
 			$stuff = mysql_fetch_assoc($result);
-			$query = "INSERT INTO leaders (appid,uwid,uwname,fname,lname,pname,email,faculty,program,phone,addressw,addressp,faid) VALUES (".$stuff['lid'].",".$stuff['uwid'].",\"".$stuff['uwname']."\",\"".$stuff['fname']."\",\"".$stuff['lname']."\",\"".$stuff['pname']."\",\"".$stuff['email']."\",\"".$stuff['faculty']."\",\"".$stuff['program']."\",\"".$stuff['phone']."\",\"".$stuff['addressw']."\",\"".$stuff['addressp']."\",".$stuff['faid']."); INSERT INTO leader_profiles (lid) SELECT id FROM leaders WHERE uwid='".$uwid."'";
-			$result = mysql_query($query);
+			$query = "INSERT INTO leaders (appid,uwid,uwname,fname,lname,pname,email,faculty,program,phone,addressw,addressp,faid) VALUES (".$stuff['lid'].",".$stuff['uwid'].",\"".$stuff['uwname']."\",\"".$stuff['fname']."\",\"".$stuff['lname']."\",\"".$stuff['pname']."\",\"".$stuff['email']."\",\"".$stuff['faculty']."\",\"".$stuff['program']."\",\"".$stuff['phone']."\",\"".$stuff['addressw']."\",\"".$stuff['addressp']."\",".$stuff['faid'].")";
+			$add_profile = "INSERT INTO leader_profiles(lid) select id from leaders where uwid='".$uwid."'";
+			$result = mysql_query($query) && mysql_query($add_profile);
 			if($result)
 				echo "Added<br />";
 			else
-				echo "Failed<br />";
+				echo "Failed<br />".mysql_error();
 		} else {
 			echo "That person doesn't exist";
 		}
 	}
 }
 
+function remove($uwid,$state) {
+	$leader = "UPDATE leaders SET state='".$state."' WHERE uwid='".$uwid."'";
+	$profile = "DELETE FROM leader_profiles WHERE lid=(SELECT id FROM leaders WHERE uwid='".$uwid."')";
+	if(mysql_query($profile) && mysql_query($leader)) {
+		echo "Update complete";
+	} else {
+		echo "Update failed<br /><br />".mysql_error();
+	}
+}
+
 if($_POST['moo']) {
 	insert($_POST['person']);
+
+} else if($_POST['remove']) {
+	remove($_POST['uwid'],$_POST['state']);
 
 } else if($_POST['se']) {
 	if($_POST['pname'] == "")
@@ -67,6 +81,12 @@ if($_POST['moo']) {
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <input type="text" name="person" maxlength="8" />
 <input type="submit" name="moo" value="Enter them" />
+</form>
+
+<p>Remove a leader (set state to withdrawn or banned)</p>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<input type="text" name="uwid" /><select name="state"><option value="withdrawn">Withdrawn</option><option value="banned">Banned</option></select><br />
+<input type="submit" name="remove" value="Set state &amp; Remove profile" />
 </form>
 
 <p>Add a leader (SE mostly) only knowing this information</p>
