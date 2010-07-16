@@ -19,7 +19,7 @@ function getTeamDisplay($ref) {
 }
 
 function getTeamProfiles($teamRef) {
-	$get_leaders = "SELECT * FROM leader_profiles JOIN leaders ON leader_profiles.lid=leaders.id WHERE leaders.team=(SELECT tid FROM teams WHERE refname='".$teamRef."')";
+	$get_leaders = "SELECT * FROM leader_profiles JOIN leaders ON leader_profiles.lid=leaders.id WHERE leaders.team=(SELECT tid FROM teams WHERE refname='".$teamRef."') ORDER BY lpos DESC,lname ASC";
 	$result = mysql_query($get_leaders);
 	if(mysql_num_rows($result)) {
 	while($row = mysql_fetch_assoc($result))
@@ -43,13 +43,20 @@ function showAllTeamsList($type="") {
 	}
 }
 
+// LOL
+function isHeadLeader($positionNumber) {
+	return ($positionNumber == 2) ? true : false;
+}
+
 if($_SERVER['QUERY_STRING'] == "gym_leaders") {
 	echo "<h1>Gym Leaders (Black ties)</h1>";
 	echo "<p>Select a city!</p>";
 	echo "<ul class='allteams'>";
 	showAllTeamsList($options="blacktie");
 	echo "</ul>";
-
+} elseif($_SERVER['QUERY_STRING'] == "missingno") {
+	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])." (Software Engineering)</h1>";
+	echo "<p>The software engineer profiles coming soon!</p>";
 } elseif($_SERVER['QUERY_STRING']) {
 	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])."</h1>";
 	$profiles = getTeamProfiles($_SERVER['QUERY_STRING']);
@@ -57,7 +64,8 @@ if($_SERVER['QUERY_STRING'] == "gym_leaders") {
 	if($profiles) {
 		foreach($profiles as $p) {
 			echo "<div class='profile'>";
-			echo "<h2>".$p['pname']." ".$p['lname']."</h2>";
+			echo "<h2>".$p['pname']." ".$p['lname'];
+			echo (isHeadLeader($p['lpos'])) ? " <span>- Head Leader</span></h2>" : "</h2>"; 
 			if($p['nickname'] != "" && $p['loveuw'] != "" && $p['advice'] != "") {
 				foreach($fields as $field=>$display) {
 					echo "<p><b>".$display.": </b>";

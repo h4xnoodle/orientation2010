@@ -72,11 +72,17 @@ if($_POST['moo']) {
 	}
 	echo ($success) ? "Updated passed" : "Update failed";
 } elseif($_POST['changerole']) {
-	print_r($_POST);
-	if($_POST['role'] > 100) {
-
+	$success = true;
+	$uwids = explode(',',$_POST['uwids']);
+	foreach($uwids as $uwid) {
+		if($_POST['role'] > 100) 
+			$query = "UPDATE leaders SET cpos='".($_POST['role']-100)."' WHERE uwid='".$uwid."'";
+		else
+			$query = "UPDATE leaders SET lpos='".$_POST['role']."' WHERE uwid='".$uwid."'"; 
+		if(!mysql_query($query))
+			$success = false;
 	}
-	$query .= "UPDATE leaders SET lpos='".$_POST['team']."' WHERE uwid='".$uwid."';"; 
+	echo ($success) ? "Updated passed" : "Update failed";
 }
 ?>
 <h3>Secret Tools Page</h3>
@@ -92,7 +98,7 @@ if($_POST['moo']) {
 <input type="submit" name="remove" value="Set state &amp; Remove profile" />
 </form>
 
-<p>Add a leader (SE mostly) only knowing this information</p>
+<!--<p>Add a leader (SE mostly) only knowing this information</p>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 ID: <input type="text" name="uwid" value="00000000" /><br />
 UWNAME: <input type="text" name="uwname" /><br />
@@ -101,7 +107,7 @@ LNAME: <input type="text" name="lname" /><br />
 PNAME: <input type="text" name="pname" /><br />
 EMAIL: <input type="text" name="email" /><br />
 <input type="submit" name="se" value="Add Softie" />
-</form>
+</form>-->
 
 <h3>Assign leader teams by uwid</h3>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">

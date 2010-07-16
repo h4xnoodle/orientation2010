@@ -168,6 +168,9 @@ div#wrap div#content {
 		padding:0;
 		font-weight:normal;
 		}
+		div#wrap div#content div.profile h2 span {
+			color:#999;
+			}
 	div#wrap div#content div.profile p {
 		font-size:12px;
 		margin:0 10px 5px 30px;
