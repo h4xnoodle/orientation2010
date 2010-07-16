@@ -10,16 +10,29 @@ function getTeamDisplay($ref) {
 	else
 		$query = "SELECT displayname FROM teams WHERE refname='".$ref."'";
 	$result = mysql_query($query);
-	if($result) {
+	if(mysql_num_rows($result)) {
 		$row = mysql_fetch_assoc($result);
 		return $row['displayname'];
 	} else {
-		return "NO TEAM";
+		return "Invalid, false, DNE, etc.";
 	}
 }
 
-function showAllTeamsList($options="") {
-	$query = "SELECT refname,displayname FROM teams ORDER BY type";
+function getTeamProfiles($teamRef) {
+	$get_leaders = "SELECT * FROM leader_profiles JOIN leaders ON leader_profiles.lid=leaders.id WHERE leaders.team=(SELECT tid FROM teams WHERE refname='".$teamRef."')";
+	$result = mysql_query($get_leaders);
+	if(mysql_num_rows($result)) {
+	while($row = mysql_fetch_assoc($result))
+		$profiles[] = $row;
+	return $profiles;
+	} else {
+		return false;
+	}
+}
+
+function showAllTeamsList($type="") {
+	$query = "SELECT refname,displayname FROM teams";
+	$query .= ($type != "") ? " WHERE type='".$type."'" : "" ;
 	$result = mysql_query($query);
 	if($result) {
 		while($row = mysql_fetch_assoc($result)) {
@@ -30,10 +43,35 @@ function showAllTeamsList($options="") {
 	}
 }
 
-if($_SERVER['QUERY_STRING']) {
-	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])."</h1>";
+if($_SERVER['QUERY_STRING'] == "gym_leaders") {
+	echo "<h1>Gym Leaders (Black ties)</h1>";
+	echo "<p>Select a city!</p>";
+	echo "<ul class='allteams'>";
+	showAllTeamsList($options="blacktie");
+	echo "</ul>";
 
-	echo "<p>Stay tuned for you leaders' profiles!</p>";
+} elseif($_SERVER['QUERY_STRING']) {
+	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])."</h1>";
+	$profiles = getTeamProfiles($_SERVER['QUERY_STRING']);
+	$fields = array('nickname'=>"People call me",'termprog'=>"My term/program",'hometown'=>"I'm from",'fave_atk'=>"My fave Pokemon attack is",'fave_series'=>"My fave Pokemon series is",'loveuw'=>"What I love about UW",'advice'=>"My advice to first-years");
+	if($profiles) {
+		foreach($profiles as $p) {
+			echo "<div class='profile'>";
+			echo "<h2>".$p['pname']." ".$p['lname']."</h2>";
+			if($p['nickname'] != "" && $p['loveuw'] != "" && $p['advice'] != "") {
+				foreach($fields as $field=>$display) {
+					echo "<p><b>".$display.": </b>";
+					echo ($p[$field] != "") ? $p[$field] : "N/A" ;
+					echo "</p>";
+				}
+			} else {
+				echo "<p>I haven't filled out my profile yet!</p>";
+			}
+			echo "</div>";
+		}
+	} else {
+		echo "<p>This team has no members/no profiles completed!</p>";
+	}
 
 } else {
 	// List all teams

@@ -45,6 +45,7 @@ function remove($uwid,$state) {
 	}
 }
 
+
 if($_POST['moo']) {
 	insert($_POST['person']);
 
@@ -62,12 +63,14 @@ if($_POST['moo']) {
 	else
 		echo "Failed adding softie :(<br />";
 } elseif($_POST['changeteam']) {
+	$success = true;
 	$uwids = explode(',',$_POST['uwids']);
-	print_r($uwids);
 	foreach($uwids as $uwid) {
-		$query .= "UPDATE leaders SET team='".$_POST['team']."' WHERE uwid='".$uwid."';"; 
-		echo $query;
+		$query = "UPDATE leaders SET team='".$_POST['team']."' WHERE uwid='".$uwid."';"; 
+		if(!mysql_query($query))
+			$success = false;
 	}
+	echo ($success) ? "Updated passed" : "Update failed";
 } elseif($_POST['changerole']) {
 	print_r($_POST);
 	if($_POST['role'] > 100) {

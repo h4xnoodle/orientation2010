@@ -161,6 +161,22 @@ div#wrap div#content {
 			color:#444;
 			}
 
+	div#wrap div#content div.profile h2 {
+		font-size:20px;
+		color:#d23872;
+		margin:15px 0 10px 30px;
+		padding:0;
+		font-weight:normal;
+		}
+	div#wrap div#content div.profile p {
+		font-size:12px;
+		margin:0 10px 5px 30px;
+		}
+		div#wrap div#content div.profile p b {
+			color:#444;
+			}
+		
+
 /* -- Sidebar -- */
 div#wrap div#sidebar {
 	float:right;
