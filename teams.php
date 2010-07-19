@@ -65,6 +65,7 @@ if($_SERVER['QUERY_STRING'] == "gym_leaders") {
 	echo "</ul>";
 } elseif($_SERVER['QUERY_STRING'] == "missingno") {
 	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])." (Software Engineering)</h1>";
+	displayLogo($_SERVER['QUERY_STRING']);
 	echo "<p>The software engineer profiles coming soon!</p>";
 } elseif($_SERVER['QUERY_STRING']) {
 	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])."</h1>";
