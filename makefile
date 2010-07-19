@@ -11,6 +11,7 @@ release :
 	cp imgs/*.flv ../imgs/ 
 	cp imgs/*.png ../imgs/
 	cp imgs/tie/* ../imgs/tie/
+	cp imgs/team_logos/* ../imgs/team_logos/
 	cp include/* ../include/ 
 	cp index.php ../ 
 	cp main.php ../ 

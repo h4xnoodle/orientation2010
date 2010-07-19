@@ -10,10 +10,15 @@ session_start();
 	<meta name="description" content="University of Waterloo, Faculty of Mathematics. Orientation 2010" />
 	<meta name="keywords" content="waterloo, orientation, pokemon, math, pikachu, pink tie, pinktie, pink-tie, tie" />
 	<script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
-	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<link rel="stylesheet" href="style.css" type="text/css" />
-	<!-- lol -->
-	<?php if(!(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING']))) { ?>
+
+	<?php if((basename($_SERVER['PHP_SELF'],'.php') == "teams" && ($_SERVER['QUERY_STRING'] == 'elite_four' || $_SERVER['QUERY_STRING'] == 'team_rocket'))) { ?>
+	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+	<?php } elseif(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING'])) { ?>
+	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+	<?php } else { ?>
 	<style type='text/css'>
 		div#wrap div#sidebar {
 			display:none;
@@ -21,7 +26,7 @@ session_start();
 		div#wrap div#content {
 			width: 840px;
 		}
-	</style>
+	</style>	
 	<?php } ?>
 </head>
 <body>

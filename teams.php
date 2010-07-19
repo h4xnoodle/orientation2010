@@ -51,8 +51,6 @@ function isHeadLeader($positionNumber) {
 function displayLogo($teamref) {
 	if(file_exists("imgs/team_logos/".$teamref.".png")) {
 		echo "<center><img src=\"imgs/team_logos/".$teamref.".png\" title='".$teamref."' /></center>";
-	} else {
-		echo "Path: imgs/team_logos/".$teamref.".png";
 	}
 }
 
