@@ -48,8 +48,17 @@ function isHeadLeader($positionNumber) {
 	return ($positionNumber == 2) ? true : false;
 }
 
+function displayLogo($teamref) {
+	if(file_exists("imgs/team_logos/".$teamref.".png")) {
+		echo "<center><img src=\"imgs/team_logos/".$teamref.".png\" title='".$teamref."' /></center>";
+	} else {
+		echo "Path: imgs/team_logos/".$teamref.".png";
+	}
+}
+
 if($_SERVER['QUERY_STRING'] == "gym_leaders") {
 	echo "<h1>Gym Leaders (Black ties)</h1>";
+	displayLogo($_SERVER['QUERY_STRING']);
 	echo "<p>Select a city!</p>";
 	echo "<ul class='allteams'>";
 	showAllTeamsList($options="blacktie");
@@ -59,6 +68,7 @@ if($_SERVER['QUERY_STRING'] == "gym_leaders") {
 	echo "<p>The software engineer profiles coming soon!</p>";
 } elseif($_SERVER['QUERY_STRING']) {
 	echo "<h1>Team: ".getTeamDisplay($_SERVER['QUERY_STRING'])."</h1>";
+	displayLogo($_SERVER['QUERY_STRING']);
 	$profiles = getTeamProfiles($_SERVER['QUERY_STRING']);
 	$fields = array('nickname'=>"People call me",'termprog'=>"My term/program",'hometown'=>"I'm from",'fave_atk'=>"My fave Pokemon attack is",'fave_series'=>"My fave Pokemon series is",'loveuw'=>"What I love about UW",'advice'=>"My advice to first-years");
 	if($profiles) {
