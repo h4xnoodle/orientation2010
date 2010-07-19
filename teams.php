@@ -75,7 +75,7 @@ if($_SERVER['QUERY_STRING'] == "gym_leaders") {
 			echo "<div class='profile'>";
 			echo "<h2>".$p['pname']." ".$p['lname'];
 			echo (isHeadLeader($p['lpos'])) ? " <span>- Head Leader</span></h2>" : "</h2>"; 
-			if($p['nickname'] != "" && $p['loveuw'] != "" && $p['advice'] != "") {
+			if($p['nickname'] != "" || $p['loveuw'] != "" || $p['advice'] != "") {
 				foreach($fields as $field=>$display) {
 					echo "<p><b>".$display.": </b>";
 					echo ($p[$field] != "") ? $p[$field] : "N/A" ;
