@@ -3,7 +3,8 @@
 <?php switch($_SERVER['QUERY_STRING']) {
 	case 'events' :
 		echo "<h1>".$names['events']."</h1>";
-		echo "<p>Coming soon!</p>";
+		echo "<table><tr><td class='math_event'>Math Event</td><td class='campus_event'>Campus-wide event</td></tr></table>";
+		include "include/event_schedule.php";
 		break;
 	
 	case 'pictures':
