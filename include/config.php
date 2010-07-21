@@ -1,7 +1,7 @@
 <?php 
 global $names;
-#mysql_connect('localhost','orient2010','V1ct0ri@.CB') or false;
-#mysql_select_db('orientation2010') or false;
+mysql_connect('localhost','orient2010','V1ct0ri@.CB') or false;
+mysql_select_db('orientation2010') or false;
 
 function getTeams($types=array('leader','other')) {
 	$query = "SELECT * FROM teams type WHERE";
@@ -56,6 +56,6 @@ if(!$showteams) {
 	"Gym Leaders"
 	);
 } else {
-	#$teams = getTeams();
+	$teams = getTeams();
 }
 ?>

@@ -9,16 +9,18 @@ session_start();
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 	<meta name="description" content="University of Waterloo, Faculty of Mathematics. Orientation 2010" />
 	<meta name="keywords" content="waterloo, orientation, pokemon, math, pikachu, pink tie, pinktie, pink-tie, tie" />
-	<script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
 	<link rel="stylesheet" href="style.css" type="text/css" />
 
-	<?php if((basename($_SERVER['PHP_SELF'],'.php') == "teams" && ($_SERVER['QUERY_STRING'] == 'elite_four' || $_SERVER['QUERY_STRING'] == 'team_rocket'))) { ?>
+<?php if((basename($_SERVER['PHP_SELF'],'.php') == "teams" && ($_SERVER['QUERY_STRING'] == 'elite_four' || $_SERVER['QUERY_STRING'] == 'team_rocket'))) { ?>
 	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
 
-	<?php } elseif(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING'])) { ?>
+<?php } elseif(basename($_SERVER['PHP_SELF'],'.php') == "main" && !($_SERVER['QUERY_STRING'])) { ?>
 	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
 
-	<?php } else { ?>
+<?php } elseif(basename($_SERVER['PHP_SELF'],'.php') == "index") { ?>
+	<script type="text/javascript" src="flowplayer/flowplayer-3.1.4.min.js"></script>
+
+<?php } else { ?>
 	<style type='text/css'>
 		div#wrap div#sidebar {
 			display:none;
@@ -28,6 +30,26 @@ session_start();
 		}
 	</style>	
 	<?php } ?>
+<?php if($_SERVER['QUERY_STRING'] == "events") { ?>
+<script type="text/javascript" src="include/mootools-1.2.4.js"></script>
+<script type="text/javascript" src="include/mootools-more-1.2.4.js"></script>
+<script language="javascript">
+window.addEvent('domready', function() {
+	$$('.desc').each(function(element,index) {
+		if(element.get('title') != null) {
+			var content = element.get('title').split('::');
+			element.store('tip:title', content[0]);
+			element.store('tip:text', content[1]);
+		}
+	});
+									
+	var tipz = new Tips('.desc',{
+		className: 'desc',
+		fixed: false
+	});
+});
+</script>
+<?php } ?>
 </head>
 <body>
 

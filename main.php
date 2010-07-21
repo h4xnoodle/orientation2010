@@ -3,7 +3,8 @@
 <?php switch($_SERVER['QUERY_STRING']) {
 	case 'events' :
 		echo "<h1>".$names['events']."</h1>";
-		echo "<table><tr><td class='math_event'>Math Event</td><td class='campus_event'>Campus-wide event</td></tr></table>";
+		echo "<p>For the week of September 5th, 2010. Roll over the event to see its description. Javascript should be enabled for prettier tooltips :)</p>";
+		echo "<table class='event_schedule'><tr><td class='math_event'>Math Event</td><td class='campus_event'>Campus-wide event</td></tr></table>";
 		include "include/event_schedule.php";
 		break;
 	
@@ -14,7 +15,9 @@
 
 	case 'sponsors':
 		echo "<h1>".$names['sponsors']."</h1>";
-		echo "<p>We would like to thank:</p><p><a href=\"http://mathsoc.uwaterloo.ca\">MathSOC</a></p>";
+		echo "<p>We would like to thank:</p>";
+		echo "<p><a href=\"http://mathsoc.uwaterloo.ca\"><img src=\"imgs/thanks/mathsoc.jpg\" alt=\"MathSOC\" /></a>";
+		echo " <a href=\"http://campuspizza.ca\" title=\"Campus Pizza\"><img src=\"imgs/thanks/campus_pizza.jpg\" alt=\"Campus Pizza\" /></a></p>";
 		break;
 
 	case 'contact':

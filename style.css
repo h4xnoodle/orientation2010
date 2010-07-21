@@ -123,9 +123,11 @@ div#wrap div#content {
 		margin:0 10px 15px 30px;
 		}
 		div#wrap div#content p a {
-			text-decoration:none;
+			text-decoration:underline;
 			color:#d23872;
-			border-bottom:1px dashed #d23872;
+			}
+		div#wrap div#content p a:hover {
+			text-decoration:none;
 			}
 		div#wrap div#content p img {
 			padding:2px;
@@ -235,12 +237,13 @@ div#wrap form textarea {
 /* -- Crazy event schedule table -- */
 div#wrap table.event_schedule {
 	border-spacing:3px;
+	margin:5px 0 20px 30px;
 	}
-div#wrap table.event_schedule. td {
+div#wrap table.event_schedule td {
 	border:1px solid #777;
 	width:80px;
-	font-family:Arial, sans-serif;
-	font-size:14px;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;
 	color:#333;
 	text-align:center;
 	padding:2px;
@@ -269,4 +272,21 @@ div#wrap table.event_schedule td.day {
 	font-weight:bold;
 	color:#555;
 	border:0;
+	}
+.tip {
+	border:1px solid #eee;
+	background-color:#fff;
+	z-index:100;
+	font-family:Verdana, sans-serif;
+	font-size:12px;
+	max-width:300px;
+	line-height:20px;
+	}
+.tip-title {
+	font-weight:bold;
+	background-color:#efefef;
+	padding:10px;
+	}
+.tip-text {
+	padding:10px;
 	}
